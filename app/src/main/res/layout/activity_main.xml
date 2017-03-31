@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.simple_soul.mylearningdemo.MainActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="260dp"
+        android:layout_height="200dp"
+        android:src="@drawable/pic4"/>
+
+    <Button
+        android:id="@+id/btn1"
+        style="@style/ButtonStyle"
+        android:text="震动"
+        />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/ButtonStyle"
+        android:text="控件"
+        />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/ButtonStyle"
+        android:text="移动图片"
+        />
+
+</LinearLayout>
