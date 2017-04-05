@@ -32,4 +32,10 @@
         android:text="移动图片"
         />
 
+    <Button
+        android:id="@+id/btn4"
+        style="@style/ButtonStyle"
+        android:text="设置桌面背景"
+        />
+
 </LinearLayout>

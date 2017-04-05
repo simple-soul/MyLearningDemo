@@ -3,6 +3,9 @@
           package="com.example.simple_soul.mylearningdemo">
 
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -23,6 +26,7 @@
         <activity android:name=".activity.ControlActivity"/>
         <activity android:name=".activity.MoveActivity">
         </activity>
+        <activity android:name=".activity.WallpaperActivity"/>
     </application>
 
 </manifest>
