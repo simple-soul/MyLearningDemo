@@ -32,4 +32,10 @@
         android:text="移动图片"
         />
 
+    <Button
+        android:id="@+id/btn5"
+        style="@style/ButtonStyle"
+        android:text="音乐播放器"
+        />
+
 </LinearLayout>
