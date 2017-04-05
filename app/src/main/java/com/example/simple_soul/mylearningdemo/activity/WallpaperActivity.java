@@ -51,7 +51,7 @@ public class WallpaperActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void initData()
     {
-        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取
+        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
         {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
