@@ -33,6 +33,12 @@
         />
 
     <Button
+        android:id="@+id/btn5"
+        style="@style/ButtonStyle"
+        android:text="音乐播放器"
+        />
+
+    <Button
         android:id="@+id/btn4"
         style="@style/ButtonStyle"
         android:text="设置桌面背景"

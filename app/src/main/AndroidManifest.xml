@@ -26,6 +26,13 @@
         <activity android:name=".activity.ControlActivity"/>
         <activity android:name=".activity.MoveActivity">
         </activity>
+        <activity android:name=".activity.MusicActivity"/>
+
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
         <activity android:name=".activity.WallpaperActivity"/>
     </application>
 
