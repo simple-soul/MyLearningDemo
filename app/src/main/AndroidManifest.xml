@@ -34,6 +34,7 @@
             android:exported="true">
         </service>
         <activity android:name=".activity.WallpaperActivity"/>
+        <activity android:name=".activity.AnimActivity"/>
     </application>
 
 </manifest>
