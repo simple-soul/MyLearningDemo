@@ -55,5 +55,18 @@
             style="@style/ButtonStyle"
             android:text="属性动画"
             />
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/ButtonStyle"
+            android:text="RxJava测试"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/ButtonStyle"
+            android:text="多线程断点续传"
+            />
     </LinearLayout>
 </ScrollView>

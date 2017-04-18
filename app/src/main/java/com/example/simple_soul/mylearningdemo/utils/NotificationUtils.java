@@ -40,7 +40,7 @@ public class NotificationUtils
             notification = new Notification();
 
             notification.icon = R.drawable.music;
-            notification.flags = Notification.FLAG_AUTO_CANCEL;
+            notification.flags = Notification.FLAG_NO_CLEAR;
 
             //notification整体的点击事件
             Intent intent = new Intent(Intent.ACTION_MAIN);

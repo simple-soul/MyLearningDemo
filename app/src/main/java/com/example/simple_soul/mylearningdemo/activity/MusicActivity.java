@@ -150,10 +150,17 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 //从service传递来的音乐列表
                 case MusicService.LIST:
                     musicList = (List<Music>) msg.obj;
+                    currentId = msg.arg1;
                     adapter = new MyMusicAdapter(MusicActivity.this, musicList);
                     listView.setAdapter(adapter);
 
-                    setCurrentMusic(0);
+                    setCurrentMusic(currentId);
+                    //当前后台正在播放音乐
+                    if(msg.arg2 == 1)
+                    {
+                        isPlaying = true;
+                        status.setText("停止");
+                    }
                     break;
                 //自动切换下一首或notification点击
                 case MusicService.PREVIOUS:
@@ -222,7 +229,6 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                     {
                         startService(intent);
                         bindService(intent, this, BIND_AUTO_CREATE);
-                        Log.i("main", "start and bind service");
                     }
                     message.what = MusicService.START;
                     status.setText("停止");
