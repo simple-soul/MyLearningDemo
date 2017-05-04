@@ -28,7 +28,12 @@ import io.reactivex.schedulers.Schedulers;
 
 public abstract class HttpUtils
 {
-    public void testHttpConnection(String urlStr, String json)
+    public HttpUtils(String urlStr, String json)
+    {
+        testHttpConnection(urlStr, json);
+    }
+
+    private void testHttpConnection(String urlStr, String json)
     {
         if (json == null)
         {

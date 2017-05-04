@@ -15,11 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".activity.VibratorActivity">
         </activity>
@@ -27,19 +22,32 @@
         <activity android:name=".activity.MoveActivity">
         </activity>
         <activity android:name=".activity.MusicActivity"/>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
+        <activity android:name=".activity.WallpaperActivity"/>
+        <activity android:name=".activity.AnimActivity"/>
+        <activity android:name=".activity.RxJavaActivity">
+        </activity>
+        <activity android:name=".activity.ThreadActivity">
+        </activity>
+        <activity android:name=".activity.TestActivity">
+        </activity>
+        <activity android:name=".activity.AChartIntentActivity">
+        </activity>
+        <activity android:name=".activity.SQLiteActivity">
+        </activity>
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".service.MusicService"
             android:enabled="true"
             android:exported="true">
         </service>
-
-        <activity android:name=".activity.WallpaperActivity"/>
-        <activity android:name=".activity.AnimActivity"/>
-        <activity android:name=".RxJavaActivity">
-        </activity>
-        <activity android:name=".activity.ThreadActivity">
-        </activity>
     </application>
 
 </manifest>

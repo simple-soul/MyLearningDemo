@@ -59,7 +59,7 @@
         <Button
             android:id="@+id/btn7"
             style="@style/ButtonStyle"
-            android:text="RxJava测试"
+            android:text="RxJava,Retrofit测试"
             android:textAllCaps="false"
             />
 
@@ -67,6 +67,27 @@
             android:id="@+id/btn8"
             style="@style/ButtonStyle"
             android:text="多线程断点续传"
+            />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/ButtonStyle"
+            android:textAllCaps="false"
+            android:text="aChartEngine测试Demo"
+            />
+
+        <Button
+            android:id="@+id/btn10"
+            style="@style/ButtonStyle"
+            android:textAllCaps="false"
+            android:text="aChartEngine测试Demo(Intent打开)"
+            />
+
+        <Button
+            android:id="@+id/btn11"
+            style="@style/ButtonStyle"
+            android:textAllCaps="false"
+            android:text="sqlLite存储+显示折线图"
             />
     </LinearLayout>
 </ScrollView>

@@ -1,14 +1,15 @@
-package com.example.simple_soul.mylearningdemo;
+package com.example.simple_soul.mylearningdemo.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.example.simple_soul.mylearningdemo.R;
 import com.example.simple_soul.mylearningdemo.utils.HttpUtils;
 
 public class RxJavaActivity extends AppCompatActivity
 {
-    private static String urlStr = "http://172.22.21.230:8080/transportservice/type/jason/action/GetCarSpeed.do";
+    private static String urlStr = "http://172.22.21.230:8080/transportservice/type/jason/action/GetLightSenseValve.do";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -16,21 +17,26 @@ public class RxJavaActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rx_java);
 
-
+        HttpFromMyself();
     }
 
-    //网络请求操作
-    private void Http()
+    //自制网络请求操作
+    private void HttpFromMyself()
     {
-        String json = "{'CarId':1}";
-        new HttpUtils()
+        String json = "";
+        new HttpUtils(urlStr, json)
         {
             @Override
             public void getResult(String s)
             {
-                Log.i("main", s);
+                Log.i("main", "回传的数据："+s);
             }
-        }.testHttpConnection(urlStr, json);
+        };
+    }
+
+    private void HttpFromRetrofit()
+    {
+
     }
 
 }
