@@ -80,14 +80,7 @@
             android:id="@+id/btn10"
             style="@style/ButtonStyle"
             android:textAllCaps="false"
-            android:text="aChartEngine测试Demo(Intent打开)"
-            />
-
-        <Button
-            android:id="@+id/btn11"
-            style="@style/ButtonStyle"
-            android:textAllCaps="false"
-            android:text="sqlLite存储+显示折线图"
+            android:text="MPAndroidChart测试Demo"
             />
     </LinearLayout>
 </ScrollView>

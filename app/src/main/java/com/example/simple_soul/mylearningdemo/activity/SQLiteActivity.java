@@ -37,7 +37,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
 {
     private GridView gridView;
 
-    private String url = "http://172.22.21.230:8080/transportservice/type/jason/action/GetAllSense.do";
+    private String url = "http://172.22.21.230:8080/transportservice/action/GetAllSense.do";
     private List<Sensor> data;
     private Handler handler = new Handler();
     private GridViewAdapter adapter;
@@ -84,7 +84,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
             {
                 handler.postDelayed(runnable, 1000);
             }
-            new HttpUtils(url, null)
+            new HttpUtils(url, "{\"UserName\":\"Z0004\"}")
             {
                 @Override
                 public void getResult(String s)
@@ -103,17 +103,18 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
                         JSONObject jsonObject = new JSONObject(s);
                         Sensor pm25 = new Sensor("pm2.5", jsonObject.getInt("pm2.5"));
                         Sensor co2 = new Sensor("co2", jsonObject.getInt("co2"));
-                        Sensor temperature = new Sensor("temperature",
-                                jsonObject.getInt("temperature"));
                         Sensor LightIntensity = new Sensor("LightIntensity",
                                 jsonObject.getInt("LightIntensity"));
-                        Sensor humidity = new Sensor("co2", jsonObject.getInt("humidity"));
+                        Sensor humidity = new Sensor("humidity", jsonObject.getInt("humidity"));
+                        Sensor temperature = new Sensor("temperature",
+                                jsonObject.getInt("temperature"));
+
 
                         data.add(pm25);
                         data.add(co2);
-                        data.add(temperature);
                         data.add(LightIntensity);
                         data.add(humidity);
+                        data.add(temperature);
 
 
                         if (contentValues == null)
@@ -160,24 +161,27 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
         {
             values = new ArrayList<>();
         }
+        Intent intent = new Intent(SQLiteActivity.this, ViewPagerActivity.class);
         switch (position)
         {
             case 0:
-                getValues("pm25");
+//                getValues("pm25");
                 break;
             case 1:
-                getValues("co2");
+//                getValues("co2");
                 break;
             case 2:
-                getValues("LightIntensity");
+//                getValues("LightIntensity");
                 break;
             case 3:
-                getValues("humidity");
+//                getValues("humidity");
                 break;
             case 4:
-                getValues("temperature");
+//                getValues("temperature");
                 break;
         }
+        intent.putExtra("page", position);
+        startActivity(intent);
         values.clear();
     }
 
@@ -205,7 +209,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
         for (int i = 0; i < values.size(); i++)
         {
             int y = values.get(i).getValue();
-            series.add(i+1, y);
+            series.add(i, y);
             if(y > max)
             {
                 max = y;
@@ -218,7 +222,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
         renderer.setXLabelsColor(Color.RED);
         for (int i = 0; i < values.size(); i++)
         {
-            renderer.addXTextLabel(i+1, values.get(i).getTime());
+            renderer.addXTextLabel(i, values.get(i).getTime());
         }
         renderer.setXLabelsAngle(35);
         renderer.setXTitle("时间");
@@ -257,7 +261,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onDestroy()
     {
-        isLoop = false;
+//        isLoop = false;
         super.onDestroy();
     }
 }

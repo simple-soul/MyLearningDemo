@@ -2,8 +2,6 @@ package com.example.simple_soul.mylearningdemo.utils;
 
 import android.util.Log;
 
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,15 +45,6 @@ public abstract class HttpUtils
                     public String apply(List<String> strings) throws Exception
                     {
                         return startConnection(strings);
-                    }
-                })
-                .map(new Function<String, String>()
-                {
-                    @Override
-                    public String apply(String s) throws Exception
-                    {
-                        JSONObject object = new JSONObject(s);
-                        return object.getString("serverinfo");
                     }
                 })
                 .subscribeOn(Schedulers.io())

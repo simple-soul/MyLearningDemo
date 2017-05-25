@@ -48,6 +48,13 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".activity.ViewPagerActivity">
+        </activity>
+        <activity android:name=".activity.AChartEngineActivity">
+        </activity>
+        <activity android:name=".activity.MPAndroidChartActivity">
+        </activity>
     </application>
 
 </manifest>

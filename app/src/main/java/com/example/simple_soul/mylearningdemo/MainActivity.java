@@ -6,14 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.simple_soul.mylearningdemo.activity.AChartIntentActivity;
+import com.example.simple_soul.mylearningdemo.activity.AChartEngineActivity;
 import com.example.simple_soul.mylearningdemo.activity.AnimActivity;
 import com.example.simple_soul.mylearningdemo.activity.ControlActivity;
+import com.example.simple_soul.mylearningdemo.activity.MPAndroidChartActivity;
 import com.example.simple_soul.mylearningdemo.activity.MoveActivity;
 import com.example.simple_soul.mylearningdemo.activity.MusicActivity;
 import com.example.simple_soul.mylearningdemo.activity.RxJavaActivity;
-import com.example.simple_soul.mylearningdemo.activity.SQLiteActivity;
-import com.example.simple_soul.mylearningdemo.activity.TestActivity;
 import com.example.simple_soul.mylearningdemo.activity.ThreadActivity;
 import com.example.simple_soul.mylearningdemo.activity.VibratorActivity;
 import com.example.simple_soul.mylearningdemo.activity.WallpaperActivity;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn8 = (Button) findViewById(R.id.btn8);
         btn9 = (Button) findViewById(R.id.btn9);
         btn10 = (Button) findViewById(R.id.btn10);
-        btn11 = (Button) findViewById(R.id.btn11);
+//        btn11 = (Button) findViewById(R.id.btn11);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
         btn10.setOnClickListener(this);
-        btn11.setOnClickListener(this);
+//        btn11.setOnClickListener(this);
     }
 
     @Override
@@ -100,19 +99,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn9:
-                intent = new Intent(this, TestActivity.class);
+                intent = new Intent(this, AChartEngineActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.btn10:
-                intent = new Intent(this, AChartIntentActivity.class);
+                intent = new Intent(this, MPAndroidChartActivity.class);
                 startActivity(intent);
                 break;
 
-            case R.id.btn11:
-                intent = new Intent(this, SQLiteActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.btn11:
+//                intent = new Intent(this, SQLiteActivity.class);
+//                startActivity(intent);
+//                break;
         }
         overridePendingTransition(R.anim.translate_in, R.anim.translate_out);
     }

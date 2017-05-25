@@ -9,7 +9,7 @@ import com.example.simple_soul.mylearningdemo.utils.HttpUtils;
 
 public class RxJavaActivity extends AppCompatActivity
 {
-    private static String urlStr = "http://172.22.21.230:8080/transportservice/type/jason/action/GetLightSenseValve.do";
+    private static String urlStr = "http://172.22.21.230:8080/transportservice/type/jason/action/SetCarMove.do";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,7 +23,7 @@ public class RxJavaActivity extends AppCompatActivity
     //自制网络请求操作
     private void HttpFromMyself()
     {
-        String json = "";
+        String json = "{\"CarId\":2, \"CarAction\":\"Stop\"}";
         new HttpUtils(urlStr, json)
         {
             @Override
