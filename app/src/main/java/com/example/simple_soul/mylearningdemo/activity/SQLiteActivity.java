@@ -67,7 +67,7 @@ public class SQLiteActivity extends AppCompatActivity implements AdapterView.OnI
 
     private void initData()
     {
-        helper = new DBOpenHelper(SQLiteActivity.this, "sensor");
+        helper = new DBOpenHelper(SQLiteActivity.this, DBOpenHelper.DB_NAME);
         writableDatabase = helper.getWritableDatabase();
         isLoop = true;
         handler.postDelayed(runnable, 1);

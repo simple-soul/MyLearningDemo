@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBOpenHelper extends SQLiteOpenHelper
 {
     public static final String TABLE_NAME = "parks";
+    public static final String DB_NAME = "sensor";
 
     public DBOpenHelper(Context context, String name)
     {

@@ -82,5 +82,6 @@
             android:textAllCaps="false"
             android:text="MPAndroidChart测试Demo"
             />
+
     </LinearLayout>
 </ScrollView>

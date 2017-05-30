@@ -55,6 +55,14 @@
         </activity>
         <activity android:name=".activity.MPAndroidChartActivity">
         </activity>
+        <activity android:name=".activity.MPPieChartActivity">
+        </activity>
+        <activity android:name=".activity.MPBarChartActivity">
+        </activity>
+        <activity android:name=".activity.MPLineChartActivity">
+        </activity>
+        <activity android:name=".activity.MPDynamicActivity">
+        </activity>
     </application>
 
 </manifest>
