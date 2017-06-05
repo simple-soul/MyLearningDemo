@@ -63,6 +63,11 @@
         </activity>
         <activity android:name=".activity.MPDynamicActivity">
         </activity>
+        <activity android:name=".activity.MPDynamicDataActivity">
+        </activity>
+        <activity android:name=".activity.ViewPagerActivity2"
+            android:theme="@style/NoAction">
+        </activity>
     </application>
 
 </manifest>

@@ -10,7 +10,7 @@ import com.example.simple_soul.mylearningdemo.R;
 
 public class MPAndroidChartActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private Button btn1, btn2, btn3, btn4;
+    private Button btn1, btn2, btn3, btn4, btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,11 +28,13 @@ public class MPAndroidChartActivity extends AppCompatActivity implements View.On
         btn2 = (Button) findViewById(R.id.mpchart_btn_2);
         btn3 = (Button) findViewById(R.id.mpchart_btn_3);
         btn4 = (Button) findViewById(R.id.mpchart_btn_4);
+        btn5 = (Button) findViewById(R.id.mpchart_btn_5);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
     }
 
     private void initData()
@@ -60,6 +62,9 @@ public class MPAndroidChartActivity extends AppCompatActivity implements View.On
 
             case R.id.mpchart_btn_4:
                 intent.setClass(MPAndroidChartActivity.this, MPDynamicActivity.class);
+                break;
+            case R.id.mpchart_btn_5:
+                intent.setClass(MPAndroidChartActivity.this, MPDynamicDataActivity.class);
                 break;
         }
         startActivity(intent);

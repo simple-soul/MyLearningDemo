@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.example.simple_soul.mylearningdemo.domain.Value;
@@ -80,6 +81,7 @@ public abstract class SensorFragment extends BaseFragment
             while (cursor.moveToNext())
             {
                 Value value = new Value(cursor.getInt(cursor.getColumnIndex(name)), cursor.getString(cursor.getColumnIndex("time")).substring(10));
+                Log.i("info", name+cursor.getInt(cursor.getColumnIndex(name)));
                 values.add(value);
             }
         }

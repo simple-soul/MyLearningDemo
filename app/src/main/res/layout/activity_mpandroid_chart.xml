@@ -41,5 +41,12 @@
             android:textAllCaps="false"
             />
 
+        <Button
+            android:id="@+id/mpchart_btn_5"
+            style="@style/ButtonStyle"
+            android:text="动态刷新"
+            android:textAllCaps="false"
+            />
+
     </LinearLayout>
 </ScrollView>
