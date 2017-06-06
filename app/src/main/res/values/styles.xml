@@ -21,4 +21,8 @@
 
     </style>
 
+    <style name="NoAction" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

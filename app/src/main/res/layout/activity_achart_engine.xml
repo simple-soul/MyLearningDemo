@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="200dp"
+            android:src="@drawable/pic5"/>
+
+        <Button
+            android:id="@+id/achart_btn_1"
+            style="@style/ButtonStyle"
+            android:text="aChartEngine(view显示)"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/achart_btn_2"
+            style="@style/ButtonStyle"
+            android:text="aChartEngine(Intent打开)"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/achart_btn_3"
+            style="@style/ButtonStyle"
+            android:text="sqlLite存储+显示折线图"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/achart_btn_4"
+            style="@style/ButtonStyle"
+            android:text="显示历史数据"
+            android:textAllCaps="false"
+            />
+
+    </LinearLayout>
+</ScrollView>

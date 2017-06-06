@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.simple_soul.mylearningdemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.SET_WALLPAPER"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
 
     <application
         android:allowBackup="true"
@@ -15,11 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".activity.VibratorActivity">
         </activity>
@@ -27,14 +22,52 @@
         <activity android:name=".activity.MoveActivity">
         </activity>
         <activity android:name=".activity.MusicActivity"/>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
+        <activity android:name=".activity.WallpaperActivity"/>
+        <activity android:name=".activity.AnimActivity"/>
+        <activity android:name=".activity.RxJavaActivity">
+        </activity>
+        <activity android:name=".activity.ThreadActivity">
+        </activity>
+        <activity android:name=".activity.TestActivity">
+        </activity>
+        <activity android:name=".activity.AChartIntentActivity">
+        </activity>
+        <activity android:name=".activity.SQLiteActivity">
+        </activity>
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".service.MusicService"
             android:enabled="true"
             android:exported="true">
         </service>
-        <activity android:name=".activity.WallpaperActivity"/>
-        <activity android:name=".activity.AnimActivity"/>
+
+        <activity android:name=".activity.ViewPagerActivity">
+        </activity>
+        <activity android:name=".activity.AChartEngineActivity">
+        </activity>
+        <activity android:name=".activity.MPAndroidChartActivity">
+        </activity>
+        <activity android:name=".activity.MPPieChartActivity">
+        </activity>
+        <activity android:name=".activity.MPBarChartActivity">
+        </activity>
+        <activity android:name=".activity.MPLineChartActivity">
+        </activity>
+        <activity android:name=".activity.MPDynamicActivity">
+        </activity>
+        <activity android:name=".activity.MPDynamicDataActivity">
+        </activity>
+        <activity android:name=".activity.ViewPagerActivity2"
+            android:theme="@style/NoAction">
+        </activity>
     </application>
 
 </manifest>

@@ -205,6 +205,16 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
                     //将音乐列表传回去
                     Message message = Message.obtain();
                     message.what = LIST;
+                    //将当前音乐和播放状态传回去(考虑activity退出后再进入的情况)
+                    if(player != null && player.isPlaying())
+                    {
+                        message.arg2 = 1;
+                    }
+                    else
+                    {
+                        message.arg2 = 0;
+                    }
+                    message.arg1 = currentId;
                     message.obj = musicList;
                     try
                     {
@@ -290,6 +300,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
     public void onDestroy()
     {
         Log.i("main", "onDestroy");
+        unregisterReceiver(receiver);
         super.onDestroy();
     }
 

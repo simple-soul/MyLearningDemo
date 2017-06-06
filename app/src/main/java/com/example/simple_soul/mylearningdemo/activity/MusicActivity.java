@@ -90,11 +90,24 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         REQUEST_CODE_ASK_PERMISSIONS);
             }
+            else
+            {
+                Log.i("main", "已有权限");
+                startService();
+            }
         }
+        else
+        {
+            Log.i("main", "6.0以下");
+            startService();
+        }
+    }
 
+    private void startService()
+    {
         //开启服务
         intent = new Intent(this, MusicService.class);
-        if(!isServiceWork(this, "com.example.simple_soul.mylearningdemo.service.MusicService"))
+        if (!isServiceWork(this, "com.example.simple_soul.mylearningdemo.service.MusicService"))
         {
             startService(intent);
         }
@@ -150,15 +163,24 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 //从service传递来的音乐列表
                 case MusicService.LIST:
                     musicList = (List<Music>) msg.obj;
+                    currentId = msg.arg1;
                     adapter = new MyMusicAdapter(MusicActivity.this, musicList);
                     listView.setAdapter(adapter);
 
-                    setCurrentMusic(0);
+                    setCurrentMusic(currentId);
+                    //当前后台正在播放音乐
+                    if(msg.arg2 == 1)
+                    {
+                        isPlaying = true;
+                        status.setText("停止");
+                    }
                     break;
                 //自动切换下一首或notification点击
                 case MusicService.PREVIOUS:
                 case MusicService.NEXT:
                     setCurrentMusic(msg.arg1);
+                    isPlaying = true;
+                    status.setText("停止");
                     break;
                 //更新进度条
                 case MusicService.CHANGE:
@@ -204,6 +226,8 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 setCurrentMusic(currentId);
                 message.arg1 = currentId;
                 message.what = MusicService.PREVIOUS;
+                isPlaying = true;
+                status.setText("停止");
                 break;
 
             case R.id.music_btn_status:
@@ -222,7 +246,6 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                     {
                         startService(intent);
                         bindService(intent, this, BIND_AUTO_CREATE);
-                        Log.i("main", "start and bind service");
                     }
                     message.what = MusicService.START;
                     status.setText("停止");
@@ -242,6 +265,8 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 setCurrentMusic(currentId);
                 message.arg1 = currentId;
                 message.what = MusicService.NEXT;
+                isPlaying = true;
+                status.setText("停止");
                 break;
         }
         try
@@ -308,10 +333,13 @@ public class MusicActivity extends BaseActivity implements ServiceConnection, Vi
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
                     Toast.makeText(this, "已获取权限", Toast.LENGTH_SHORT).show();
+                    Log.i("main", "已获取权限");
+                    startService();
                 }
                 else
                 {
                     Toast.makeText(this, "未获取权限", Toast.LENGTH_SHORT).show();
+                    Log.i("main", "未获取权限");
                 }
                 return;
             }
