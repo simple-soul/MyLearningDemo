@@ -50,7 +50,7 @@ public class NotificationUtils
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                     | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);// 关键的一步，设置启动模式，两种情况
             PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             notification.contentIntent = pIntent;
 
             remoteViews = new RemoteViews(context.getPackageName(),
@@ -58,22 +58,22 @@ public class NotificationUtils
             //下一首
             Intent intent2 = new Intent(MusicService.ACTION_NEXT);
             PendingIntent pIntent2 = PendingIntent.getBroadcast(context, 1, intent2,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             remoteViews.setOnClickPendingIntent(R.id.item_not_image_next, pIntent2);
             //上一首
             Intent intent3 = new Intent(MusicService.ACTION_PREVIOUS);
             PendingIntent pIntent3 = PendingIntent.getBroadcast(context, 2, intent3,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             remoteViews.setOnClickPendingIntent(R.id.item_not_image_previous, pIntent3);
             //切换状态
             Intent intent4 = new Intent(MusicService.ACTION_STATUS);
             PendingIntent pIntent4 = PendingIntent.getBroadcast(context, 3, intent4,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             remoteViews.setOnClickPendingIntent(R.id.item_not_image_status, pIntent4);
             //关闭
             Intent intent5 = new Intent(MusicService.ACTION_EXIT);
             PendingIntent pIntent5 = PendingIntent.getBroadcast(context, 4, intent5,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_CANCEL_CURRENT);
             remoteViews.setOnClickPendingIntent(R.id.item_not_tv_exit, pIntent5);
         }
         remoteViews.setTextViewText(R.id.item_not_tv_title, music.getTitle());
